@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Resume</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4d981a0d-8be1-411e-bf5f-5933a414eca4" class="page sans"><header><img class="page-cover-image" src="Resume%204d981a0d8be1411ebf5f5933a414eca4/arsh_singh_hothi.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/checklist_lightgray.svg"/></div><h1 class="page-title">Resume</h1><p class="page-description"></p></header><div class="page-body"><div id="7d35939f-eca7-4928-a8ea-4214f3538121" class="column-list"><div id="abbfdfdc-c737-44ca-8dd0-ce93469e806e" style="width:68.75%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b5d01987-9e83-4af1-879a-ad5479cf0adf"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/row_lightgray.svg"/></div><div style="width:100%"><strong>Experience</strong></div></figure><p id="65744ac6-cbb8-4de4-94d8-74b3bb2d49ce" class="">Product Manager Intern 					                  Summer 2023 - Present</p><p id="e17722a9-c20f-4973-9f09-80610c013171" class=""><em>UrbanSim, Inc. </em>				                                                         Seattle, WA</p><ul id="e250f904-94d4-4fa5-a4d6-5a73e9832ec1" class="bulleted-list"><li style="list-style-type:disc">Doing a little bit of everything.</li></ul><p id="9c9b0b9c-c2eb-4b88-b4ed-ee0c0c712647" class="">
+</p><p id="2fd4902f-bb83-4bd5-a9f2-94e1d318a1b9" class="">Director of Tech &amp; Product 					       Fall 2020 - Summer 2022</p><p id="0052d24a-b813-4d01-8275-d92a4dad42ad" class=""><em>The Daily Californian (Cal’s School Newspaper) </em>				   Berkeley, CA</p><ul id="319f3250-f609-46a8-b65a-d30db08cdf95" class="bulleted-list"><li style="list-style-type:disc">Responsible for the digital transformation strategy of the school newspaper to increase market penetration and revenue.</li></ul><ul id="7b0d665b-14ed-44b5-af4b-0ae9e494bd42" class="bulleted-list"><li style="list-style-type:disc">Led development of the paper’s first mobile apps (iOS and Android) from inception to launch in order to establish online presence.</li></ul><ul id="5286a3b3-0f3a-43c7-954d-66ac49e876f7" class="bulleted-list"><li style="list-style-type:disc">Created an app launch strategy that utilized public beta testing, paid media marketing, and soft marketing approaches in order to induce demand.</li></ul><ul id="3affaa87-ebb1-4f64-aaf9-72ffb2d9e146" class="bulleted-list"><li style="list-style-type:disc">Creating an ad-platform utilizing first-party data from reader behavior in order to move from print ads to more efficient and profitable digital ads..</li></ul><ul id="b30d1755-1031-477a-ae73-de18d25d9be0" class="bulleted-list"><li style="list-style-type:disc">Led the creation of digital tools from idea to minimum viable product to finished product in order to provide user features on app and website: Campus Life Recruitment Calendar, User Accounts, Personalized News Feeds, and Native Advertising Platform.</li></ul><ul id="064341f6-8e8a-48bc-a102-bfd79a96f946" class="bulleted-list"><li style="list-style-type:disc">Led three cross-functional teams of analysts, developers, and designers (~20 directs).</li></ul><ul id="989904d0-c73d-4ab1-9b84-a433467b6a90" class="bulleted-list"><li style="list-style-type:disc">Founded the Technology department to house all digital products under one roof in order to increase the newspaper’s digital presence.</li></ul><p id="ff76e801-9205-4cde-8c33-20fed5a00e82" class="">
+</p><p id="2f5be68b-66ed-4d8e-8519-c31b0610c49d" class="">Product Manager Intern								          Summer 2021</p><p id="314e2d89-332e-4aef-acac-6e05d554d36f" class=""><em>Dow Jones &amp; Company, Inc. 							          </em>New York, NY</p><ul id="5fb01fec-9a55-443e-9929-5c40a7702d4b" class="bulleted-list"><li style="list-style-type:disc">Created over 200+ first-party data segments informed by SQL Queries in order to build out internal AdTech infrastructure around first-party data.</li></ul><ul id="f429bc03-4dc5-4e58-aa5c-3b32ec7e756e" class="bulleted-list"><li style="list-style-type:disc">Conducted risk-benefit analysis and compared 150+ third-party and first-party data segments for an internal RFP tool in order to streamline deals with clients and sell advertisements.</li></ul><ul id="03fc7895-ab53-4011-ab08-41f8d548556f" class="bulleted-list"><li style="list-style-type:disc">Added over 200+ data points to a primary dataset in order to reach a goal of 1,000,000 populated users in prototype first party segments that would eventually become standard.</li></ul><ul id="140bd33b-b4f5-4193-8a14-915c32b59bb5" class="bulleted-list"><li style="list-style-type:disc">Conducted stakeholder interviews, industry research, data analysis and SWOT analysis to put together recommendations as part of a Competitive Intelligence Evaluation in order to justify switching to a first-party data strategy. Presented to executives and peers alike.</li></ul><p id="ad8df1e3-e407-49b4-a754-50b2d643b7e8" class="">
+</p><p id="cb30e3b0-0fb9-4b95-9a91-93da975de0db" class="">Product Manager and Sales Intern 						Summer 2020</p><p id="617ff1f4-eab2-44de-9a05-f77147e54e07" class=""><em>Tracflo, Inc.</em>									                   New York, NY</p><ul id="3d1a6bdc-5283-400b-8b5e-83f9450a79fc" class="bulleted-list"><li style="list-style-type:disc">First member of the Tracflo PM and sales teams. Brought VC-backed software product into commercial construction market that manages GC financials and tickets digitally.</li></ul><ul id="cf947918-e648-4ba7-81fb-797d6c19cbec" class="bulleted-list"><li style="list-style-type:disc">Created a Predictable Revenue Model. (Repeatable Sales model - top to bottom of funnel.) Created, Presented, and Piloted Sales and Marketing Strategies that are still in use. Conducted cold outreach and increased response rate by 10%.</li></ul><ul id="cadd0fbb-a35c-4a5f-9842-3002f598aa20" class="bulleted-list"><li style="list-style-type:disc">Created scripts and templates for over 1000+ Product Market Research Calls, Cold Outreach messages, and Discovery calls. These scripts are still used internally at Tracflo.</li></ul><ul id="9470daee-6d52-4f0d-8776-737277408228" class="bulleted-list"><li style="list-style-type:disc">Worked with stakeholders to build out new features for the product in order to make it more user friendly and versatile.</li></ul><ul id="fde20b8b-d1ea-4618-afb1-2e5f4070b6c2" class="bulleted-list"><li style="list-style-type:disc">Did extensive research and A/B testing in order to ensure product quality and to test any new features that were to be implemented.</li></ul><p id="244a1ea8-9639-4451-90ab-67456bdebd74" class="">
+</p><p id="3995fd5f-7314-4072-83fe-7a475f5f16c9" class="">Project Manager, City Intern							         Summer 2019</p><p id="62c57e10-7a88-4ddc-8c52-f6a1c3701128" class=""><em>City of Half Moon Bay</em> 							          Half Moon Bay, CA</p><ul id="7453355d-2715-4497-a5e6-8a4d68b49e80" class="bulleted-list"><li style="list-style-type:disc">Worked on grant application for Prop. 68 funding, conducted park stakeholder outreach, and completed a case-specific parking study. <em>(Carter Park Improvement Project)</em></li></ul><ul id="1d2416d1-5e31-415b-a47e-6e5bb54f44ad" class="bulleted-list"><li style="list-style-type:disc">Conducted extensive in-house and in-the-field research, created and presented proposals to city executives. <em>(Bluffside Memorial Project.)</em></li></ul><ul id="6ef5f9ac-9472-44de-ad1e-a0c29a71d092" class="bulleted-list"><li style="list-style-type:disc">Created maps in AutoCAD to track and monitor parking downtown; created a spreadsheet that tracked, monitored, and provided occupancy percentages at four peak times; and recorded data of each parking spot for an in-depth analysis of HMB downtown. <em>(Downtown HMB Parking Study.)</em></li></ul><ul id="8ee1b005-66c7-4276-89e7-47ab38189499" class="bulleted-list"><li style="list-style-type:disc">Brought city up to code by creating an enterprise systems catalog.<em> (SB 272 Compliance.)</em></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b3772f91-0ab1-44cd-a955-3cb511b6c3b3"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/row_lightgray.svg"/></div><div style="width:100%"><strong>Education</strong></div></figure><h3 id="1c14e0f4-6b77-4e1d-bc3f-4c29febe3153" class=""><em><strong>University of California, Berkeley</strong></em></h3><p id="c1cf7bf4-3dcf-4fea-a76c-95d03d07739a" class=""><mark class="highlight-gray_background">M.S. Information and Data Science </mark>                                                                      </p><p id="c2d56223-07bd-4270-b207-1b8b2298a504" class=""><mark class="highlight-gray_background">B.A. Economics; Focus: Public Policy</mark></p><p id="b3ea8b2d-7e57-4afd-9a8e-eb861e4b170d" class=""><em>Significant Coursework in: </em><em><strong>Statistics</strong></em><em>, Behavioral Microeconomics, Macroeconomic Policy, Environmental Policy, Political Theory, Urban Design, Public Policy, Geography, Natural Resource Management, </em><em><strong>Machine Learning</strong></em><em>, </em><em><strong>Artificial Intelligence</strong></em><em>, </em><em><strong>Data Engineering,</strong></em><em> and </em><em><strong>Programming</strong></em><em> (R, SQL, Python, etc.).</em></p></div><div id="6e96cce4-b7b0-48fc-b8b0-2099a74f500e" style="width:31.25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0a30704c-474c-4817-8b57-c70a146dee08"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/row_lightgray.svg"/></div><div style="width:100%"><strong>Skills</strong></div></figure><ul id="9b704820-3c95-4e56-8428-d3f7e5e6b253" class="bulleted-list"><li style="list-style-type:disc"><em><strong>Languages:</strong></em><ul id="18c35b5c-eca4-4322-9295-8236282f3c6d" class="bulleted-list"><li style="list-style-type:circle">Python <em>(ML/Stats/Viz)</em></li></ul><ul id="27c0e380-788b-44e5-a162-ac3517c3a876" class="bulleted-list"><li style="list-style-type:circle">R <em>(ML/Stats/Viz)</em></li></ul><ul id="529e1dad-2832-4f52-bc6d-6d73eeebc479" class="bulleted-list"><li style="list-style-type:circle">SQL <em>(postgres, etc.)</em></li></ul><ul id="58df1ac6-35a4-46bb-95c1-5db23ada6808" class="bulleted-list"><li style="list-style-type:circle">HTML <em>(web dev)</em></li></ul></li></ul><ul id="801f7649-7ad3-43d4-8448-9bd04161f7ce" class="bulleted-list"><li style="list-style-type:disc"><em><strong>Programming: </strong></em><ul id="4a062553-12f6-4e7a-a00c-85c45e5d1da0" class="bulleted-list"><li style="list-style-type:circle">API integration <em>(Rest)</em></li></ul><ul id="11798d45-1500-4e29-90b6-aefb9408d30d" class="bulleted-list"><li style="list-style-type:circle">Virtual Machines <em>(AWS)</em></li></ul><ul id="a436a306-2a12-4da6-95d1-42835be370b2" class="bulleted-list"><li style="list-style-type:circle">Docker <em>(conda, neo4j, postgres)</em></li></ul></li></ul><ul id="a408b3a7-0f22-416d-9ab9-451a67cf0041" class="bulleted-list"><li style="list-style-type:disc"><em><strong>Product: </strong></em><ul id="d93c53d5-5d14-499a-b1e7-c343cc570458" class="bulleted-list"><li style="list-style-type:circle">Agile Development <em>(Jira, Notion, etc.)</em> </li></ul><ul id="2a3b2eaa-437e-4952-8392-dcc29983894f" class="bulleted-list"><li style="list-style-type:circle">Product Strategy <em>(Idea&gt;MVP&gt;Launch)</em></li></ul><ul id="b7734d1d-e827-4161-8eba-6da0833cad9f" class="bulleted-list"><li style="list-style-type:circle">Code Review <em>(Debugging, General QA)</em></li></ul><ul id="19ca1707-ce18-41f9-b7bf-797669f2b973" class="bulleted-list"><li style="list-style-type:circle">Feature Integration</li></ul><ul id="c7a6ef2d-1b3c-4813-8e0d-002abf7b2db3" class="bulleted-list"><li style="list-style-type:circle">User Research</li></ul><ul id="05674b04-8276-47d4-8234-ded7989e1e49" class="bulleted-list"><li style="list-style-type:circle">Cross-functional work</li></ul></li></ul><p id="9494082d-3067-4a30-bbe8-21aef38f6570" class="">
+</p></div></div><p id="64ac908a-0093-49ad-8d6f-7d34cdc7f4fc" class="">
+</p></div></article></body></html>
